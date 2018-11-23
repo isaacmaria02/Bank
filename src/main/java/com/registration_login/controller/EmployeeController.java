@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.registration_login.model.Accounts;
+import com.registration_login.model.Addresses;
 import com.registration_login.model.Customers;
 import com.registration_login.service.EmployeeService;
 
@@ -30,17 +33,21 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/")
 	public ModelAndView listEmployee(ModelAndView model) throws IOException {
-		List<Customers> listEmployee = employeeService.getAllEmployees();
-		model.addObject("listEmployee", listEmployee);
-		model.setViewName("home");
+		/*List<Customers> listEmployee = employeeService.getAllEmployees();
+		model.addObject("listEmployee", listEmployee);*/
+		model.setViewName("EmployeeForm");
 		return model;
 	}
 
-	@RequestMapping(value = "/newEmployee", method = RequestMethod.GET)
-	public ModelAndView newContact(ModelAndView model) {
-		Customers employee = new Customers();
-		model.addObject("employee", employee);
-		model.setViewName("EmployeeForm");
+	@RequestMapping(value = "/open", method = RequestMethod.POST)
+	public ModelAndView newContact(ModelAndView model, @ModelAttribute Customers customer, Addresses address, Accounts account) {
+
+		System.out.println(customer+" "+address+" "+account);
+		
+		
+		
+		
+		model.setViewName("home");
 		return model;
 	}
 

@@ -9,6 +9,8 @@
 <title>Employee Management Screen</title>
 </head>
 <body><h1>lol</h1>
+<a href="open">click</a>
+
 <%-- 	<div align="center">
 		<h1>Employee List</h1>
 		
